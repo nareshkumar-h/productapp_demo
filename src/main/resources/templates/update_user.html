@@ -1,38 +1,58 @@
 <!DOCTYPE html>
-<html>
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
 <meta charset="ISO-8859-1" />
 <title>Update User</title>
 </head>
 <body>
-	<h2>Update User</h2>
-	<form action="../users/update" method="POST">
-		<input type="hidden" name="id" th:value="${USER_DETAIL.id}" />
-		<table border="1">
-			<tbody>
-				<tr>
-					<th>Name</th>
-					<td><input type="text" name="name" required="required"
-						autofocus="autofocus" th:value="${USER_DETAIL.name}" /></td>
-				</tr>
-				<tr>
-					<th>Email</th>
-					<td><input type="email" name="email" required="required" th:value="${USER_DETAIL.email}" />
-					</td>
-				</tr>
-				<tr>
-					<th>Password</th>
-					<td><input type="password" name="password" required="required" th:value="${USER_DETAIL.password}"/>
-					</td>
-				</tr>
-				<tr>
-					<td>
-						<button type="submit">Submit</button>
-					</td>
-				</tr>
-			</tbody>
-		</table>
-	</form>
-	<a href="../users/list">List Users</a>
+	<div class="container">
+		<div th:include="header"></div>
+		<div class="row">
+			<div class="col-md-8">
+
+				<h3>Update User</h3>
+
+				<form action="../users/update" method="POST" class="form-horizontal">
+
+					<input type="hidden" name="id" th:value="${USER_DETAIL.id}" />
+					<div class="form-group">
+						<label for="name" class="col-sm-2 control-label">Name</label>
+						<div class="col-sm-10">
+							<input type="text" name="name" class="form-control" id="name"
+								th:value="${USER_DETAIL.name}" required="required"
+								autofocus="autofocus" />
+
+						</div>
+					</div>
+
+					<div class="form-group">
+						<label for="email" class="col-sm-2 control-label">Email</label>
+						<div class="col-sm-10">
+							<input type="email" name="email" class="form-control" id="email"
+								th:value="${USER_DETAIL.email}" required="required" />
+
+						</div>
+					</div>
+
+					<div class="form-group">
+						<label for="password" class="col-sm-2 control-label">Password</label>
+						<div class="col-sm-10">
+							<input type="password" name="password" class="form-control"
+								th:value="${USER_DETAIL.password}" id="email"
+								required="required" />
+
+						</div>
+					</div>
+
+					<div class="form-group">
+						<div class="col-sm-offset-2 col-sm-10">
+							<button type="submit" class="btn btn-primary">Submit</button>
+						</div>
+					</div>
+				</form>
+
+			</div>
+		</div>
+	</div>
 </body>
 </html>
