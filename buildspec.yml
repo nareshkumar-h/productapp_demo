@@ -11,4 +11,4 @@ phases:
       - mvn package
 artifacts:
   files:
-    - target/productapp-web-1.0-SNAPSHOT.jar
+    - target/productapp-web-0.0.1-SNAPSHOT.jar
